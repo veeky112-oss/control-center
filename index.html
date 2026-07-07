@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Control Center</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ===========================
+         SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <span>Control Center</span>
+
+        </div>
+
+        <nav id="menu"></nav>
+
+    </aside>
+
+    <!-- ===========================
+         MAIN
+    ============================ -->
+
+    <main class="main">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div
+                class="page-title"
+                id="pageTitle">
+
+                Home
+
+            </div>
+
+            <div class="header-right">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span id="loginName">
+
+                    Administrator
+
+                </span>
+
+                <button
+                    class="btn"
+                    onclick="logout()">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Content -->
+
+        <section
+            id="content"
+            class="content">
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ===================================================
+     LIBRARY
+==================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<!-- ===================================================
+     AUTH
+==================================================== -->
+
+<script src="js/auth.js"></script>
+
+<!-- ===================================================
+     JS
+==================================================== -->
+
+<script src="js/menu.js"></script>
+
+<script src="js/router.js"></script>
+
+<script src="js/home.js"></script>
+
+<script src="js/member.js"></script>
+
+<script src="js/laporan.js"></script>
+
+<script src="js/setting.js"></script>
+
+<script src="js/app.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const nama = localStorage.getItem("nama");
+
+    if(nama){
+
+        document.getElementById("loginName").textContent = nama;
+
+    }
+
+});
+
+function logout(){
+
+    if(!confirm("Yakin ingin logout?")){
+
+        return;
+
+    }
+
+    localStorage.removeItem("cc_login");
+    localStorage.removeItem("nama");
+    localStorage.removeItem("role");
+
+    location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
