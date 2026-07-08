@@ -65,7 +65,7 @@ async function login() {
 
     try {
 
-        const { data, error } = await supabase
+        const { data, error } = await window.db
             .from("users")
             .select("*")
             .eq("username", id)
