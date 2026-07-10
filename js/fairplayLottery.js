@@ -215,14 +215,9 @@ function copyFairplayLottery(){
 
     let text = "";
 
-    // Header
-    text += "TEBAK\tBELI\tHASIL\tSTATUS\tOUTPUT\n";
-
     fairplayRows.forEach(row=>{
 
         text +=
-            row.tebak + "\t" +
-            row.beli + "\t" +
             row.hasil + "\t" +
             row.status + "\t" +
             row.output + "\n";
@@ -231,7 +226,7 @@ function copyFairplayLottery(){
 
     navigator.clipboard.writeText(text);
 
-    alert("Hasil berhasil dicopy.");
+    alert("Berhasil dicopy.");
 
 }
 
