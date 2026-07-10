@@ -8,8 +8,7 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
     "sb_publishable_WriUr37j7o-EzKirI0wpHQ_v1moKgt0";
 
-// Simpan client dengan nama lain
-window.db = window.supabase.createClient(
+window.supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );

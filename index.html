@@ -66,23 +66,49 @@
 
             <div class="header-right">
 
-                <i class="fa-solid fa-user"></i>
+                <div class="profile-menu" onclick="toggleProfileMenu(event)">
 
-                <span id="loginName">
+                    <div class="profile-user">
 
-                    Administrator
+                        <i class="fa-solid fa-user"></i>
 
-                </span>
+                        <span id="loginName">
 
-                <button
-                    class="btn"
-                    onclick="logout()">
+                            Administrator
 
-                    <i class="fa-solid fa-right-from-bracket"></i>
+                        </span>
 
-                    Logout
+                        <i class="fa-solid fa-chevron-down arrow"></i>
 
-                </button>
+                    </div>
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown">
+
+                        <div
+                            class="dropdown-item"
+                            onclick="openPage('setting')">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Setting
+
+                        </div>
+
+                        <div
+                            class="dropdown-item logout-item"
+                            onclick="logout()">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -141,6 +167,26 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("loginName").textContent = nama;
 
     }
+
+});
+
+function toggleProfileMenu(e){
+
+    e.stopPropagation();
+
+    document
+        .getElementById("profileDropdown")
+        .classList
+        .toggle("show");
+
+}
+
+document.addEventListener("click",()=>{
+
+    document
+        .getElementById("profileDropdown")
+        .classList
+        .remove("show");
 
 });
 
