@@ -20,7 +20,7 @@ function renderMemberOlg() {
                         type="file"
                         id="memberFile"
                         accept=".xlsx,.xls"
-                        onchange="loadMemberExcel(event)">
+                        onchange="loadMemberOlgExcel(event)">
 
                     Choose File
 
@@ -28,7 +28,7 @@ function renderMemberOlg() {
 
                 <button
                     class="btn"
-                    onclick="copyRekapMember()">
+                    onclick="copyRekapMemberOlg()">
 
                     Copy Rekap
 
@@ -36,7 +36,7 @@ function renderMemberOlg() {
 
                 <button
                     class="btn btn-reset"
-                    onclick="resetMember()">
+                    onclick="resetMemberOlg()">
 
                     Reset
 
@@ -210,7 +210,7 @@ let memberRekap = {
     EWALLET:0
 
 };
-function loadMemberExcel(event){
+function loadMemberOlgExcel(event){
 
     const file = event.target.files[0];
 
@@ -233,7 +233,7 @@ function loadMemberExcel(event){
             raw:false
         });
 
-        prosesMember();
+        prosesMemberOlg();
 
     }
 
@@ -243,7 +243,7 @@ function loadMemberExcel(event){
 
 
 
-function prosesMember(){
+function prosesMemberOlg(){
 
     memberRekap={
 
@@ -375,7 +375,7 @@ function prosesMember(){
     document.getElementById("mEWALLET").textContent=memberRekap.EWALLET;
 
 }
-function copyRekapMember(type="data"){
+function copyRekapMemberOlg(type="data"){
 
     let text="";
 
@@ -403,7 +403,7 @@ function copyRekapMember(type="data"){
 
 
 
-function resetMember(){
+function resetMemberOlg(){
 
     memberRows=[];
 
