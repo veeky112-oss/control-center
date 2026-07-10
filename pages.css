@@ -312,3 +312,158 @@ gap:15px;
 }
 
 }
+/* =========================================
+   SETTING
+========================================= */
+
+.setting-page{
+    display:flex;
+    gap:24px;
+    min-height:700px;
+}
+
+.setting-sidebar{
+    width:300px;
+    flex-shrink:0;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.setting-content{
+    flex:1;
+    background:#fff;
+    border-radius:14px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.setting-menu-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 22px;
+    cursor:pointer;
+    transition:.25s;
+    border-bottom:1px solid #eef2f7;
+}
+
+.setting-menu-item:hover{
+    background:#f8fafc;
+}
+
+.setting-menu-item.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+.setting-menu-left{
+    display:flex;
+    gap:14px;
+    align-items:center;
+}
+
+.setting-menu-left i{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.setting-menu-title{
+    font-size:15px;
+    font-weight:700;
+}
+
+.setting-menu-desc{
+    font-size:12px;
+    color:#94a3b8;
+}
+
+.setting-menu-item.active .setting-menu-desc{
+    color:#dbeafe;
+}
+
+.setting-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.setting-subtitle{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.setting-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.setting-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:22px;
+}
+
+.setting-card-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.setting-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.setting-form label{
+    font-size:14px;
+    font-weight:600;
+}
+
+.setting-form input,
+.setting-form select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.setting-form input:focus,
+.setting-form select:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+.setting-switch{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.setting-switch:last-child{
+    border:none;
+}
+
+.setting-save{
+    margin-top:20px;
+}
+
+@media(max-width:1000px){
+
+.setting-page{
+    flex-direction:column;
+}
+
+.setting-sidebar{
+    width:100%;
+}
+
+}
